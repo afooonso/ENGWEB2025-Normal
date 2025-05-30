@@ -115,8 +115,6 @@ router.post('/edicoes', async function (req, res) {
     }
 })
 
-// PUT /edicoes/:id
-// PUT /edicoes/:id (com atualização de músicas)
 router.put('/edicoes/:id', async function (req, res) {
     try {
         const { musicas, ...dadosEdicao } = req.body
