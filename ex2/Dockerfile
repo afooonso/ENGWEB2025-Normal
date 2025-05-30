@@ -5,6 +5,6 @@ WORKDIR /usr/src/app
 COPY . .
 RUN npm install
 
-EXPOSE 17001
+EXPOSE 25001
 
 CMD npm start

@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h2= "Edição: " + edicao._id
+  p Ano da edição: #{edicao.anoEdicao}
+  p País organizador: 
+    a(href="/paises/" + edicao.organizacao)= edicao.organizacao
+  p País vencedor: 
+    if edicao.vencedor
+      a(href="/paises/" + edicao.vencedor)= edicao.vencedor
+    else
+      | Não atribuído
+
+  h3 Músicas
+  if edicao.musicas.length > 0
+    table.w3-table
+      thead
+        tr
+          th Título
+          th Intérprete
+          th País
+      tbody
+        each musica in edicao.musicas
+          tr
+            td= musica.titulo
+            td= musica.interprete
+            td= musica.pais
+  else
+    p Nenhuma música registada.
+
+  a(href="/") Voltar à página principal

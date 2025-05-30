@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  h2 País: #{nome}
+
+  a(href='/') Voltar à página inicial
+
+  if participou.length
+    h3 Edições em que participou
+    table.w3-table.w3-bordered
+      thead
+        tr
+          th ID Edição
+          th Música
+          th Intérprete
+          th Venceu?
+      tbody
+        each p in participou
+          tr
+            td: a(href="/" + p.edicao)= p.edicao
+            td= p.titulo
+            td= p.interprete
+            td= p.venceu ? 'Sim' : 'Não'
+  else
+    p Não participou em nenhuma edição.
+
+  if organizou.length
+    h3 Edições organizadas
+    table.w3-table.w3-bordered
+      thead
+        tr
+          th ID Edição
+          th Ano
+      tbody
+        each o in organizou
+          tr
+            td: a(href="/edicoes/" + o.id)= o.id
+            td= o.ano
+  else
+    p Não organizou nenhuma edição.

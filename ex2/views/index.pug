@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1 Festival Eurovisão
+  table.w3-table.w3-bordered
+    thead
+      tr
+        th ID da Edição
+        th Ano
+        th País Organizador
+        th País Vencedor
+    tbody
+      each edicao in edicoes
+        tr
+          td
+            a(href="/" + edicao._id)= edicao._id
+          td= edicao.anoEdicao
+          td
+            if edicao.organizacao
+              a(href="/paises/" + edicao.organizacao)= edicao.organizacao
+            else
+              | -
+          td
+            if edicao.vencedor
+              a(href="/paises/" + edicao.vencedor)= edicao.vencedor
+            else
+              | -

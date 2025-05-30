@@ -1,0 +1,83 @@
+[
+    {
+      "name": "GET /edicoes (todas as edições)",
+      "method": "GET",
+      "url": "http://localhost:25000/edicoes"
+    },
+    {
+      "name": "GET /edicoes?org=Italy (por organizador)",
+      "method": "GET",
+      "url": "http://localhost:25000/edicoes?org=Italy"
+    },
+    {
+      "name": "GET /edicoes/:id (edição específica)",
+      "method": "GET",
+      "url": "http://localhost:25000/edicoes/ed1975"
+    },
+    {
+      "name": "GET /paises?papel=org (países organizadores)",
+      "method": "GET",
+      "url": "http://localhost:25000/paises?papel=org"
+    },
+    {
+      "name": "GET /paises?papel=venc (países vencedores)",
+      "method": "GET",
+      "url": "http://localhost:25000/paises?papel=venc"
+    },
+    {
+      "name": "GET /edicoes/interpretes (lista de intérpretes)",
+      "method": "GET",
+      "url": "http://localhost:25000/interpretes"
+    },
+    {
+        "name": "POST /edicoes (nova edição com músicas)",
+        "method": "POST",
+        "url": "http://localhost:25000/edicoes",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "_id": "ed2025",
+          "anoEdicao": "2025",
+          "organizacao": "Portugal",
+          "vencedor": "Portugal",
+          "musicas": [
+            {
+              "_id": "m2025_Portugal",
+              "titulo": "Fado do Futuro",
+              "pais": "Portugal",
+              "compositor": "João Silva",
+              "interprete": "Maria Luz",
+              "letra": "Ana Costa",
+              "link": "https://youtube.com/watch?v=fadodofuturo",
+              "edicao": "ed2025"
+            }
+          ]
+        }
+      },
+
+      {
+        "name": "PUT /edicoes/:id (atualizar edição)",
+        "method": "PUT",
+        "url": "http://localhost:25000/edicoes/ed2025",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "anoEdicao": "2025",
+          "organizacao": "Portugal",
+          "vencedor": "Spain"
+        }
+      },
+      {
+        "name": "DELETE /edicoes/:id (remover edição)",
+        "method": "DELETE",
+        "url": "http://localhost:25000/edicoes/ed2025"
+      }
+      
+      
+      
+
+    
+  ]
+  
