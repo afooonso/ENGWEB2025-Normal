@@ -1,16 +1,27 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="pt">
 <head>
-  <title>Express</title>
+  <meta charset="UTF-8">
+  <title>Festival da Eurovisão</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-
 </head>
-
 <body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
-</body>
+  <h1>🎤 Festival da Eurovisão 🎶</h1>
+  <p>Bem-vindo à API de dados do Festival!</p>
 
+  <ul>
+    <li><a href="/edicoes">GET /edicoes</a>: Lista todas as edições</li>
+    <li><a href="/edicoes?org=Portugal">GET /edicoes?org=Portugal</a>: Edições organizadas por Portugal</li>
+    <li><a href="/edicoes/ed2023">GET /edicoes/:id</a>: Detalhes da edição de 2023</li>
+    <li><a href="/paises?papel=org">GET /paises?papel=org</a>: Países organizadores e respetivos anos</li>
+    <li><a href="/paises?papel=venc">GET /paises?papel=venc</a>: Países vencedores e respetivos anos</li>
+    <li><a href="edicoes/musicas">GET /edicoes/musicas</a>: Todas as músicas</li>
+    <li><a href="/interpretes">GET /interpretes</a>: Intérpretes únicos e respetivos países</li>
+  </ul>
+
+  <footer>
+    <p>EngWeb2025 · Epoca Normal</p>
+  </footer>
+</body>
 </html>

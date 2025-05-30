@@ -30,15 +30,15 @@ A API disponibiliza os seguintes endpoints principais:
 
 - `GET /edicoes`: devolve todas as edições, com opção de filtro por país organizador;
 - `GET /edicoes/:id`: devolve os detalhes de uma edição específica, incluindo a lista de músicas associadas;
-- `GET /edicoes/paises?papel=org`: devolve todos os países que organizaram edições e respetivos anos;
-- `GET /edicoes/paises?papel=venc`: devolve todos os países que venceram edições e respetivos anos;
+- `GET /paises?papel=org`: devolve todos os países que organizaram edições e respetivos anos;
+- `GET /paises?papel=venc`: devolve todos os países que venceram edições e respetivos anos;
 - `GET /edicoes/musicas`: devolve todas as músicas (para estatísticas e análise);
-- `GET /edicoes/interpretes`: devolve a lista de intérpretes únicos, agrupados por país;
+- `GET /interpretes`: devolve a lista de intérpretes únicos, agrupados por país;
 - `POST /edicoes`: cria uma nova edição (com ou sem músicas);
 - `PUT /edicoes/:id`: atualiza uma edição e substitui as músicas associadas;
 - `DELETE /edicoes/:id`: remove uma edição e as suas músicas.
 
-Todos os testes realizados às rotas encontram-se no ficheiro `queriespostman.json`, disponível no repositório.
+Todos os testes realizados às rotas encontram-se no ficheiro `ex1/queriespostman.json`, disponível no repositório.
 
 ## Exercício 2
 
