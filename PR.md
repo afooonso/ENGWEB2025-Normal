@@ -22,6 +22,42 @@ Importação bem-sucedida das duas coleções:
 - Base de dados: `eurovisao`
 - Coleções: `edicoes`, `musicas`
 
+
+
+## Exercicio 1 - Respostas Textuais 
+1. Quantos registos estão na base de dados (soma das coleções):
+
+// edições
+db.edicoes.countDocuments()
+
+// músicas ( apenas separado das edicoes para uma melhor manipulacao de informacao)
+db.musicas.countDocuments()
+
+2. Quantas edições têm "Ireland" como vencedor?
+
+db.edicoes.countDocuments({ vencedor: "Ireland" })
+
+3. Qual a lista de intérpretes (ordenada alfabeticamente e sem repetições)?
+
+db.musicas.distinct("interprete").sort()
+
+4. Qual a distribuição de músicas por edição (quantas músicas há em cada edição)?
+
+db.musicas.aggregate([
+  { $group: { _id: "$edicao", total: { $sum: 1 } } },
+  { $sort: { _id: 1 } }
+])
+
+5. Qual a distribuição de vitórias por país (quantas vitórias tem cada país)?
+
+db.edicoes.aggregate([
+  { $match: { vencedor: { $ne: "" } } },
+  { $group: { _id: "$vencedor", total: { $sum: 1 } } },
+  { $sort: { total: -1 } }
+])
+
+
+
 ## Exercício 1 - Implementação do Backend
 
 Para responder às questões propostas, desenvolveu-se uma API REST no backend (porta `25000`) utilizando Express e Mongoose.
